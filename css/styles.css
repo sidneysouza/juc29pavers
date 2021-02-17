@@ -50,34 +50,37 @@ a:focus {
   text-decoration: underline;
 }
 
+.container-fluid {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 .logo {
   margin: 70px auto;
 }
 .logo-img {
-  width: 250px;
+  width: 15em;
   filter: contrast(0) brightness(2);
 }
 .welcome-box {
   margin-bottom: 30px;
 }
 .welcome-box .welcome-first {
-  font-size: 22px;
-  line-height: 25px;
+  font-size: 1.5em;
+  line-height: 0.5em;
   letter-spacing: 0.1em;
 }
 .welcome-box .welcome-title {
-  font-size: 70px;
+  font-size: 4em;
   font-weight: 700;
-  line-height: 80px;
-  letter-spacing: 0.1em;
+  line-height: 1.2em;
+  letter-spacing: -0.05em;
   color: #9ecf84;
 }
 .welcome-box p {
-  font-size: 24px;
+  font-size: 1.2em;
   line-height: 150%;
   text-align: center;
-  color: #ffffff;
-  width: 960px;
   margin: auto;
 }
 #social-icons {
@@ -98,29 +101,19 @@ a:focus {
   margin: 10px 0px;
 }
 .social-icons li a {
-  width: 50px;
-  height: 50px;
+  width: 2em;
+  height: 2em;
   border-radius: 10px;
   display: inline-block;
-  line-height: 50px;
+  line-height: 2em;
   text-align: center;
   background: rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 1);
-  font-size: 18px;
+  font-size: 1.5em;
 }
 .social-icons li a:hover {
-  color: #003760;
-  background-color: #9ecf84;
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  text-align: center;
-  left: 0;
-  right: 0;
-  font-size: 12px;
-  letter-spacing: 0.05em;
+  color: #96989a;
+  background-color: #fff;
 }
 
 /* Background Slide */
@@ -199,6 +192,16 @@ footer {
   -webkit-animation-delay: 30s;
   -moz-animation-delay: 30s;
   animation-delay: 30s;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  left: 0;
+  right: 0;
+  font-size: 0.7em;
+  letter-spacing: 0.05em;
 }
 
 @-webkit-keyframes imageAnimation {
@@ -311,5 +314,37 @@ footer {
   }
   100% {
     opacity: 0;
+  }
+}
+
+@media only screen and (min-width: 320px) {
+  body {
+    font-size: 0.6em;
+  }
+}
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 0.9em;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body {
+    font-size: 0.9em;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  body {
+    font-size: 1em;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  body {
+    font-size: 1.2em;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  body {
+    font-size: 1.5em;
   }
 }
