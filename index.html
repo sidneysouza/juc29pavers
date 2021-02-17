@@ -133,7 +133,8 @@
 
               <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
                 <form
-                  action="https://www.elformo.com/forms/59e0aa44-9349-49a5-9bf7-e31de7dfd40f"
+                  id="myform"
+                  action=""
                   method="post"
                   accept-charset="UTF-8"
                   role="form"
@@ -147,7 +148,7 @@
                         type="text"
                         name="name"
                         class="form-control"
-                        id="name"
+                        id="form-name"
                         placeholder="Enter your name"
                         required
                         data-rule="minlen:4"
@@ -161,7 +162,7 @@
                         type="email"
                         class="form-control"
                         name="email"
-                        id="email"
+                        id="form-email"
                         placeholder="Enter your email address"
                         required
                         data-rule="email"
@@ -173,6 +174,7 @@
                   <div class="form-group">
                     <label for="name">Message</label>
                     <textarea
+                      id="form-message"
                       class="form-control"
                       name="message"
                       rows="4"
@@ -263,12 +265,31 @@
           overlay:
             "https://www.transparenttextures.com/patterns/dark-brick-wall.png",
 
-          // "https://www.transparenttextures.com/patterns/ravenna.png",
-
           delay: 10000,
           transitionDuration: 1000,
           timer: false,
           preloadImage: true,
+        });
+
+        // Send Email
+        $("#myform").on("submit", function (e) {
+          e.preventDefault();
+          console.log("aqui");
+          var data = {
+            name: $("#form-name").val(),
+            email: $("#form-email").val(),
+            message: $("#form-message").val(),
+          };
+          $.ajax({
+            type: "POST",
+            url:
+              "https://www.elformo.com/forms/59e0aa44-9349-49a5-9bf7-e31de7dfd40f",
+            data: data,
+            success: function (data) {
+              //$(".success").fadeIn(1000);
+              console.log(data);
+            },
+          });
         });
       });
     </script>
