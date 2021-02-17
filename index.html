@@ -275,13 +275,12 @@
         $("#myform").on("submit", function (e) {
           e.preventDefault();
           let data = $("#myform").serialize();
-          console.log(data);
           $.ajax({
             type: "POST",
             url:
               "https://www.elformo.com/forms/59e0aa44-9349-49a5-9bf7-e31de7dfd40f",
             data: data,
-            success: function (data) {
+            complete: function () {
               $("#form-name").val("");
               $("#form-email").val("");
               $("#form-message").val("");
