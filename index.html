@@ -274,12 +274,6 @@
         // Send Email
         $("#myform").on("submit", function (e) {
           e.preventDefault();
-          console.log("aqui");
-          // var data = {
-          //   name: $("#form-name").val(),
-          //   email: $("#form-email").val(),
-          //   message: $("#form-message").val(),
-          // };
           let data = $("#myform").serialize();
           console.log(data);
           $.ajax({
@@ -291,7 +285,7 @@
               $("#form-name").val("");
               $("#form-email").val("");
               $("#form-message").val("");
-              $(".sent-message").show("slow").delay(3000).hide("slow");
+              $(".sent-message").fadeIn("slow").delay(10000).fadeOut("slow");
             },
           });
         });
