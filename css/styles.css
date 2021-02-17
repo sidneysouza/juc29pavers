@@ -254,11 +254,12 @@ footer {
 
 .contact .php-email-form .sent-message {
   display: none;
-  color: #fff;
-  background: #18d26e;
+  border-radius: 5px;
+  color: rgb(255 255 255 / 0.65);
+  background: rgb(24 210 110 / 0.5);
   text-align: center;
-  padding: 15px;
-  font-weight: 600;
+  font-size: 0.8em;
+  padding: 1em;
 }
 
 .contact .php-email-form .loading {

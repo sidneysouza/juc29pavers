@@ -288,8 +288,7 @@
               "https://www.elformo.com/forms/59e0aa44-9349-49a5-9bf7-e31de7dfd40f",
             data: data,
             success: function (data) {
-              //$(".success").fadeIn(1000);
-              console.log(data);
+              $(".sent-message").show("slow").delay(3000).hide("slow");
             },
           });
         });
