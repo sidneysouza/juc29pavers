@@ -275,11 +275,13 @@
         $("#myform").on("submit", function (e) {
           e.preventDefault();
           console.log("aqui");
-          var data = {
-            name: $("#form-name").val(),
-            email: $("#form-email").val(),
-            message: $("#form-message").val(),
-          };
+          // var data = {
+          //   name: $("#form-name").val(),
+          //   email: $("#form-email").val(),
+          //   message: $("#form-message").val(),
+          // };
+          let data = $("#myform").serialize();
+          console.log(data);
           $.ajax({
             type: "POST",
             url:
