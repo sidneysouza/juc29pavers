@@ -113,7 +113,7 @@
 
                   <div class="phone">
                     <i class="fa fa-phone"></i>
-                    <p>+1 5589 55488 55s</p>
+                    <p>+1 5589 55488 55</p>
                   </div>
 
                   <!-- <iframe
@@ -141,6 +141,8 @@
                         name="name"
                         class="form-control"
                         id="name"
+                        placeholder="Enter your name"
+                        required
                         data-rule="minlen:4"
                         data-msg="Please enter at least 4 chars"
                       />
@@ -153,6 +155,8 @@
                         class="form-control"
                         name="email"
                         id="email"
+                        placeholder="Enter your email address"
+                        required
                         data-rule="email"
                         data-msg="Please enter a valid email"
                       />
@@ -165,6 +169,8 @@
                       class="form-control"
                       name="message"
                       rows="4"
+                      placeholder="Enter your message"
+                      required
                       data-rule="required"
                       data-msg="Please write something for us"
                     ></textarea>
@@ -193,19 +199,27 @@
       <div class="text-right">
         <ul class="social-icons">
           <li>
-            <a href="#" title="Facebook"
+            <a
+              href="https://www.facebook.com/juc29pavers/"
+              target="_blank"
+              title="Facebook"
               ><i class="fa fa-facebook" aria-hidden="true"></i
             ></a>
           </li>
           <li>
-            <a href="#" title="Twitter"><i class="fa fa-twitter"></i></a>
+            <a
+              href="https://www.instagram.com/juc29pavers/"
+              target="_blank"
+              title="Instagram"
+              ><i class="fa fa-instagram"></i
+            ></a>
           </li>
-          <li>
+          <!-- <li>
             <a href="#" title="Linkedin"><i class="fa fa-linkedin"></i></a>
           </li>
           <li>
             <a href="#" title="Instagram"><i class="fa fa-behance"></i></a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </section>
@@ -241,6 +255,9 @@
           ],
           overlay:
             "https://www.transparenttextures.com/patterns/dark-brick-wall.png",
+
+          // "https://www.transparenttextures.com/patterns/ravenna.png",
+
           delay: 10000,
           transitionDuration: 1000,
           timer: false,
