@@ -12,7 +12,7 @@
     <title>JUC29 Concrete Pavers & Hardscape</title>
 
     <!-- pageclip styles -->
-    <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
+    <!-- <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen"> -->
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
@@ -264,7 +264,6 @@
           e.preventDefault();
 
           let recaptcha = grecaptcha.getResponse();
-          console.log('captcha: ', recaptcha);
 
           if(recaptcha.length <= 0) {              
             alert('Please complete captcha verification to send e-mail')
@@ -284,19 +283,20 @@
               // "https://send.pageclip.co/ohFz68YidaG587Hsjp5khHvo9K5K7CND",
               // "https://www.elformo.com/forms/59e0aa44-9349-49a5-9bf7-e31de7dfd40f",
             data: postData,
-            success: function (data) {
-              console.log('aqui está o retorno: ', data);
+            success: function (data) {              
               $("#form-name").val("");
               $("#form-email").val("");
               $("#form-message").val("");
-              grecaptcha.reset();
               $(".sent-message").fadeIn("slow").delay(10000).fadeOut("slow");
+              setTimeout(() => {
+                grecaptcha.reset();
+              }, 1000)
             },
           });
         });
       });
     </script>
-    <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
+    <!-- <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script> -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </body>
 </html>
