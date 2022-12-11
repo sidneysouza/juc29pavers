@@ -273,6 +273,7 @@
           
           let postData = $("#myform").serialize();
           postData['g-recaptcha-response'] = recaptcha;
+          postData['_replyto'] = 'juc29pavers@hotmail.com';
           
           $.ajax({
             type: "POST",
