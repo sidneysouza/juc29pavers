@@ -6,16 +6,13 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, 
      user-scalable=0"
-    />
+    />    
     <meta name="description" content="" />
     <meta name="author" content="JUC29 GROUP, INC" />
-    <meta name="generator" content="Hugo 0.80.0" />
     <title>JUC29 Concrete Pavers & Hardscape</title>
 
-    <!-- <link
-      rel="canonical"
-      href="https://getbootstrap.com/docs/4.6/examples/jumbotron/"
-    /> -->
+    <!-- pageclip styles -->
+    <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
@@ -262,9 +259,11 @@
           $.ajax({
             type: "POST",
             url:
-              "https://www.elformo.com/forms/59e0aa44-9349-49a5-9bf7-e31de7dfd40f",
+              "https://send.pageclip.co/ohFz68YidaG587Hsjp5khHvo9K5K7CND",
+              // "https://www.elformo.com/forms/59e0aa44-9349-49a5-9bf7-e31de7dfd40f",
             data: data,
-            complete: function () {
+            success: function (data) {
+              console.log('aqui está o retorno: ', data);
               $("#form-name").val("");
               $("#form-email").val("");
               $("#form-message").val("");
@@ -274,5 +273,6 @@
         });
       });
     </script>
+    <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
   </body>
 </html>
