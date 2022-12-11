@@ -123,6 +123,7 @@
                   class="php-email-form"
                 >
                   <span class="title"> Send us a message </span>
+                  <input type="hidden" name="subject" value="JUC29 PAVERS SITE EMAIL" />
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="name">Name</label>
@@ -273,7 +274,8 @@
           
           let postData = $("#myform").serialize();
           postData['g-recaptcha-response'] = recaptcha;
-          postData['_replyto'] = 'juc29pavers@hotmail.com';
+          postData['_replyto'] = 'juc29pavers@gmail.com';
+
           
           $.ajax({
             type: "POST",
