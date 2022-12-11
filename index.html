@@ -259,16 +259,16 @@
         });
 
         // Send Email
-        $("#myform").on("submit", function (e) {
-          $('form').on('submit', function(e) {
-            e.preventDefault();
-            let recaptcha = grecaptcha.getResponse();
-            console.log('captcha: ', recaptcha);
-            if(recaptcha.length <= 0) {              
-              alert('Please complete captcha verification to send e-mail')
-              return;
-            }
-          });
+        $("#myform").on("submit", function (e) {          
+          e.preventDefault();
+
+          let recaptcha = grecaptcha.getResponse();
+          console.log('captcha: ', recaptcha);
+
+          if(recaptcha.length <= 0) {              
+            alert('Please complete captcha verification to send e-mail')
+            return;
+          }          
           
           let data = $("#myform").serialize();
           
