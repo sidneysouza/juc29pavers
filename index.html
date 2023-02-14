@@ -289,10 +289,12 @@
           postData['_replyto'] = 'juc29pavers@gmail.com';
 
           
+          
           $.ajax({
-            type: 'POST',
+            method: 'POST',
             url: 'https://forms.un-static.com/forms/7feea8a1d496afe93764efafc2f9399cc8be2cba/ajax',
-            contentType: 'application/json; charset=utf-8',
+            contentType: 'application/json',
+            dataType: 'json',
             data: postData,
             success: function(data) {
               $("#form-name").val("");
@@ -303,7 +305,8 @@
                 grecaptcha.reset();
               }, 500)
             },
-            error: function() {
+            error: function(data) {
+              console.log(data);
               alert('There was an error trying to send your message. Please try again later.')
               return;
             }
