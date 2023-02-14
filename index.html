@@ -289,25 +289,27 @@
           postData['_replyto'] = 'juc29pavers@gmail.com';
 
           
-          $.post(
-              "https://forms.un-static.com/forms/7feea8a1d496afe93764efafc2f9399cc8be2cba/ajax",
-              // "https://send.pageclip.co/ohFz68YidaG587Hsjp5khHvo9K5K7CND",
-              // "https://www.elformo.com/forms/59e0aa44-9349-49a5-9bf7-e31de7dfd40f",
-            postData,
-            function(data) {
+          $.ajax({
+            type: 'POST',
+            url: 'https://forms.un-static.com/forms/7feea8a1d496afe93764efafc2f9399cc8be2cba/ajax',
+            contentType: 'application/json; charset=utf-8',
+            data: postData,
+            dataType: 'text json',
+            cache: false,
+            success: function(data) {
               $("#form-name").val("");
-                $("#form-email").val("");
-                $("#form-message").val("");
-                $(".sent-message").fadeIn("slow").delay(10000).fadeOut("slow");
-                setTimeout(() => {
-                  grecaptcha.reset();
-                }, 500)
+              $("#form-email").val("");
+              $("#form-message").val("");
+              $(".sent-message").fadeIn("slow").delay(10000).fadeOut("slow");
+              setTimeout(() => {
+                grecaptcha.reset();
+              }, 500)
+            },
+            error: function() {
+              alert('There was an error trying to send your message. Please try again later.')
+              return;
             }
-          )
-          .fail(function() {
-            alert('There was an error trying to send your message. Please try again later.')
-            return;
-          })
+          });         
         });
       });
     </script>
