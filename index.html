@@ -188,7 +188,7 @@
                     <div class="loading">Loading</div>
                     <div class="error-message"></div>
                     <div class="sent-message">
-                      Your message has been sent. Thank you!
+                      Thank you for your message. It has been sent.
                     </div>
                   </div>
                   <div class="text-center">
@@ -233,7 +233,7 @@
     </section>
 
     <footer>
-      <p>Copyright &copy; 2021 JUC29 GROUP, Inc - All rights reserved</p>
+      <p>Copyright &copy; 2023 JUC29 GROUP, Inc - All rights reserved</p>
     </footer>
 
     <div id="preloader">
@@ -295,17 +295,24 @@
               "https://forms.un-static.com/forms/7feea8a1d496afe93764efafc2f9399cc8be2cba/ajax",
               // "https://send.pageclip.co/ohFz68YidaG587Hsjp5khHvo9K5K7CND",
               // "https://www.elformo.com/forms/59e0aa44-9349-49a5-9bf7-e31de7dfd40f",
-            data: postData,
-            success: function (data) {              
-              $("#form-name").val("");
+            data: postData
+          })
+          .done(function(data) {
+            $("#form-name").val("");
               $("#form-email").val("");
               $("#form-message").val("");
               $(".sent-message").fadeIn("slow").delay(10000).fadeOut("slow");
               setTimeout(() => {
                 grecaptcha.reset();
               }, 500)
-            },
-          });
+           })
+           .fail(function() {
+              alert('There was an error trying to send your message. Please try again later.')
+              return;
+            })
+            .always(function() {
+              // alert( "" );
+            });
         });
       });
     </script>
