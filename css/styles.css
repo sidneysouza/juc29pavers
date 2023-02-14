@@ -295,8 +295,14 @@ footer {
 }
 .contact .php-email-form input::placeholder,
 .contact .php-email-form textarea::placeholder {
-  color: #ccc;
+  color: transparent;
 }
+
+.contact .php-email-form input:focus::placeholder,
+.contact .php-email-form textarea:focus::placeholder {
+  color: gray
+}
+
 .contact .php-email-form input:focus,
 .contact .php-email-form textarea:focus {
   border-color: #80ba62;
