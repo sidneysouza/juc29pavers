@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1, maximum-scale=1, 
      user-scalable=0"
     />    
-    <meta name="description" content="" />
+    <meta name="description" content="JUC29 PAVERS" />
     <meta name="author" content="JUC29 GROUP, INC" />
     <title>JUC29 Concrete Pavers & Hardscape</title>
 
@@ -188,7 +188,7 @@
                     <div class="loading">Loading</div>
                     <div class="error-message"></div>
                     <div class="sent-message">
-                      Thank you for your message. It has been sent.
+                      Your message has been sent. Thank you!
                     </div>
                   </div>
                   <div class="text-center">
@@ -233,7 +233,7 @@
     </section>
 
     <footer>
-      <p>Copyright &copy; 2023 JUC29 GROUP, Inc - All rights reserved</p>
+      <p>Copyright &copy; 2021 JUC29 GROUP, Inc - All rights reserved</p>
     </footer>
 
     <div id="preloader">
@@ -288,15 +288,16 @@
           postData['g-recaptcha-response'] = recaptcha;
           postData['_replyto'] = 'juc29pavers@gmail.com';
 
-          
-          
+         
           $.ajax({
-            method: 'POST',
-            url: 'https://forms.un-static.com/forms/7feea8a1d496afe93764efafc2f9399cc8be2cba/ajax',
-            contentType: 'application/json',
+            type: "post",
+            url:
+              "https://forms.un-static.com/forms/7feea8a1d496afe93764efafc2f9399cc8be2cba/ajax",
+              // "https://send.pageclip.co/ohFz68YidaG587Hsjp5khHvo9K5K7CND",
+              // "https://www.elformo.com/forms/59e0aa44-9349-49a5-9bf7-e31de7dfd40f",
             dataType: 'json',
             data: postData,
-            success: function(data) {
+            success: function (data) {              
               $("#form-name").val("");
               $("#form-email").val("");
               $("#form-message").val("");
@@ -306,11 +307,9 @@
               }, 500)
             },
             error: function(data) {
-              console.log(data);
-              alert('There was an error trying to send your message. Please try again later.')
-              return;
+              console.log(data)
             }
-          });         
+          });
         });
       });
     </script>
