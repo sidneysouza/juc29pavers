@@ -297,7 +297,8 @@
               // "https://www.elformo.com/forms/59e0aa44-9349-49a5-9bf7-e31de7dfd40f",
             dataType: 'text',
             data: postData,
-            success: function (res) {   
+            
+            complete: function (res) {   
               console.log(res);      
               $("#form-name").val("");
               $("#form-email").val("");
@@ -308,7 +309,7 @@
               }, 500)
             },
             error: function(res) {
-              console.log(res);
+              console.log('error: ', res);
             }
           });
         });
